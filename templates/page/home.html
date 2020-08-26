@@ -2,4 +2,21 @@
 
 {% block content %}
     <h1>Hello World</h1>
+
+    <script>
+    const xhr = new XMLHttpRequest()
+    const method = 'GET'
+    const url = '/tweets'
+    const resposeType = 'json'
+
+    xhr.responseType = resposeType
+    xhr.open(method, url)
+    xhr.onload = function() {
+        const serverResponse = xhr.response
+        var listedItems = serverResponse.response
+        console.log(listedItems)
+
+    }
+    xhr.send()
+    </script>
 {% endblock content %}
