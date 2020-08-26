@@ -3,19 +3,30 @@
 {% block content %}
     <h1>Hello World</h1>
 
+    <div id="tweets">
+        Loading...
+    </div>
     <script>
+    const tweetsElement = document.getElementById("tweets")
+
     const xhr = new XMLHttpRequest()
     const method = 'GET'
     const url = '/tweets'
-    const resposeType = 'json'
+    const responseType = 'json'
 
-    xhr.responseType = resposeType
+    xhr.responseType = responseType
     xhr.open(method, url)
     xhr.onload = function() {
         const serverResponse = xhr.response
-        var listedItems = serverResponse.response
-        console.log(listedItems)
-
+        const listedItems = serverResponse.response
+        let finalTweetStr = ""
+        let i;
+        for(i=0; i<listedItems.length; i++) {
+            console.log(listedItems[i])
+            let currentItem = "<div class='mb-4'><h1>" + listedItems[i].id + "</h1>" + "<p>" + listedItems[i].content + "</p></div>"
+            finalTweetStr += currentItem
+        }
+        tweetsElement.innerHTML = finalTweetStr
     }
     xhr.send()
     </script>
