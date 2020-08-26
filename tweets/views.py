@@ -3,11 +3,20 @@ from django.shortcuts import render
 from .models import Tweet
 
 
-def home_view(request):
-    return HttpResponse("<h1>Hello World</h1>")
+def home_view(request, *args, **kwargs):
+    return render(request, 'page/home.html', context={})
 
 
-def tweet_detail_view(request, tweet_id):
+def tweet_list_view(request, *args, **kwargs):
+    query_set = Tweet.objects.all()
+    tweet_list = [{'id': tweet.id, 'content': tweet.content} for tweet in query_set]
+    data = {
+        'response': tweet_list
+    }
+    return JsonResponse(data)
+
+
+def tweet_detail_view(request, tweet_id, *args, **kwargs):
     data = {
         'id': tweet_id,
     }
