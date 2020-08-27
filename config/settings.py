@@ -25,7 +25,7 @@ SECRET_KEY = 'vvqs_s371a1#pult8g-qnsbt5w!58wpoyt$9yt%+(jb5py1n=('
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['127.0.0.1', 'www.google.com']
 
 
 # Application definition
@@ -37,7 +37,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'rest_framework',
+    # 'rest_framework',
 
     'tweets',
 ]
