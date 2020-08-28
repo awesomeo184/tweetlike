@@ -74,7 +74,7 @@
 
             } else if (xhr.status === 500) {
                 alert("Server error")
-            } else if (xhr.status === 401) {
+            } else if (xhr.status === 403) {
                 alert("You Must Login")
                 window.location.href = "/login"
             }
