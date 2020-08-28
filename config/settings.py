@@ -26,7 +26,7 @@ SECRET_KEY = 'vvqs_s371a1#pult8g-qnsbt5w!58wpoyt$9yt%+(jb5py1n=('
 DEBUG = True
 
 ALLOWED_HOSTS = ['127.0.0.1', 'www.google.com']
-
+LOGIN_URL = "/login"
 
 # Application definition
 
