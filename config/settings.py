@@ -29,8 +29,9 @@ DEBUG = True
 
 ALLOWED_HOSTS = ['127.0.0.1', 'www.google.com']
 LOGIN_URL = "/login"
-MAX_TWEET_LENGTH = 250
 
+MAX_TWEET_LENGTH = 250
+TWEET_ACTION_OPTION = ['like', 'unlike', 'retweet']
 # Application definition
 
 INSTALLED_APPS = [
